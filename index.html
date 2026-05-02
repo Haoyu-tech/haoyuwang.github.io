@@ -22,8 +22,8 @@
 
   body {
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.5;
     color: var(--text);
     background: #fff;
   }
@@ -135,41 +135,41 @@
   /* ── MAIN ── */
   .content {
     flex: 1;
-    padding: 48px 56px 80px 56px;
+    padding: 32px 44px 56px 44px;
     max-width: 880px;
   }
 
-  .section { margin-bottom: 52px; }
+  .section { margin-bottom: 36px; }
 
   .content h1 {
     font-family: 'Lora', serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--border);
   }
 
   .content h2 {
     font-family: 'Lora', serif;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 600;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
     border-bottom: 1px solid var(--border);
     scroll-margin-top: 20px;
   }
 
   .content p {
-    margin-bottom: 12px;
-    font-size: 15.5px;
+    margin-bottom: 8px;
+    font-size: 14.5px;
     color: #444;
   }
 
   /* Education */
   .edu-item {
-    margin-bottom: 18px;
-    padding-bottom: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #f0f0f0;
   }
   .edu-item:last-child { border-bottom: none; margin-bottom: 0; }
@@ -239,8 +239,8 @@
 
   /* Experience */
   .exp-item {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
     border-bottom: 1px solid #f0f0f0;
   }
 
@@ -252,36 +252,36 @@
     align-items: baseline;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
   }
 
-  .exp-title { font-weight: 700; font-size: 16px; }
+  .exp-title { font-weight: 700; font-size: 15px; }
   .exp-period {
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--muted);
     font-family: 'Source Code Pro', monospace;
     white-space: nowrap;
   }
 
   .exp-org {
-    font-size: 14.5px;
+    font-size: 13.5px;
     color: var(--dark-blue);
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   .exp-ul {
     padding-left: 18px;
-    font-size: 14.5px;
+    font-size: 13.5px;
     color: #555;
   }
 
-  .exp-ul li { margin-bottom: 5px; }
+  .exp-ul li { margin-bottom: 3px; }
 
   /* Publications */
   .paper-item {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -291,9 +291,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .paper-title {
@@ -323,14 +323,14 @@
   /* Awards */
   .award-list {
     list-style: none;
-    font-size: 14.5px;
+    font-size: 13.5px;
   }
 
   .award-list li {
-    padding: 7px 0;
+    padding: 4px 0;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     color: #444;
   }
 
@@ -425,7 +425,7 @@
       <section class="section" id="about">
         <h1>About</h1>
         <p>
-          PhD student in Financial Mathematics at the <strong>University of Auckland</strong>, researching portfolio optimisation, algorithmic trading, and deep learning in financial markets. Previously completed an MSc in Financial Mathematics at Xi'an Jiaotong-Liverpool University. Published in <em>Information Processing and Management</em> and <em>Financial Innovation</em>, with additional working papers available on SSRN.
+          PhD student in Financial Mathematics at the <strong>University of Auckland</strong>, specialising in mathematical finance, stochastic control, and ML/DL/RL for financial markets. Published in <em>Information Processing and Management</em> and <em>Financial Innovation</em>, with additional working papers available on SSRN.
         </p>
       </section>
 
@@ -526,7 +526,7 @@
         <div class="exp-item">
           <div class="exp-row">
             <div class="exp-title">Finance Analyst — Fixed Term (Project)</div>
-            <div class="exp-period">10/2025 — 12/2025</div>
+            <div class="exp-period">10/2025 — 01/2026</div>
           </div>
           <div class="exp-org">Oxford Finance – Turner NZ · Auckland, New Zealand</div>
         </div>
@@ -545,6 +545,11 @@
             <div class="exp-period">2023 — 2024</div>
           </div>
           <div class="exp-org">Xi'an Jiaotong-Liverpool University, School of Mathematics and Physics · Suzhou, China</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-row">
+            <div class="exp-title">Quantitative Research Intern</div>
             <div class="exp-period">10/2023 — 02/2024</div>
           </div>
           <div class="exp-org">S&amp;P Global (IHS Markit) · Shanghai, China</div>
@@ -577,25 +582,12 @@
             <div class="exp-title">Competition Participant <span class="badge badge-purple">Invitational</span></div>
             <div class="exp-period">2025</div>
           </div>
-          <div class="exp-org">Citadel Trading Invitational — Australia 2025 · Virtual (Zoom)</div>
+          <div class="exp-org">Citadel Trading Invitational — Australia 2025</div>
           <ul class="exp-ul">
             <li><strong>Market Making Simulation (Parts 1 &amp; 2):</strong> Competed in a live market-making simulation, quoting bid/ask spreads, managing inventory risk, and optimising P&amp;L under real-time trading conditions across two extended sessions.</li>
             <li><strong>Quant Simulation (Levels 1 &amp; 2):</strong> Tackled multi-level quantitative trading challenges requiring rapid signal generation, strategy design, and execution logic under time pressure.</li>
             <li><strong>Coding Challenge:</strong> Implemented algorithmic trading solutions in a timed coding challenge, applying data structures and quantitative reasoning to financial problem sets.</li>
           </ul>
-          <details style="margin-top:10px;">
-            <summary style="font-size:13.5px; color:var(--muted); cursor:pointer;">Full Schedule</summary>
-            <table class="schedule-table">
-              <tr><td>11:50 PM</td><td>Participants Join Zoom</td></tr>
-              <tr><td>12:00 PM</td><td>Welcome &amp; Introduction</td></tr>
-              <tr><td>12:20 PM</td><td>Session 1: Market Making Simulation (Part 1)</td></tr>
-              <tr><td>2:00 PM</td><td>Session 1: Market Making Simulation (Part 2)</td></tr>
-              <tr><td>3:00 PM</td><td>Afternoon Break</td></tr>
-              <tr><td>3:30 PM</td><td>Introduction to Coding Challenge</td></tr>
-              <tr><td>4:10 PM</td><td>Session 2: Quant Simulation Levels 1 &amp; 2</td></tr>
-              <tr><td>6:10 PM</td><td>Wrap-up &amp; Closing Remarks</td></tr>
-            </table>
-          </details>
         </div>
       </section>
 
@@ -618,7 +610,6 @@
         <h2>Certifications &amp; Awards</h2>
         <ul class="award-list">
           <li><span>🎓</span><div><strong>Xi'an Jiaotong-Liverpool University Entrance Scholarship</strong> · 09/2022</div></li>
-          <li><span>🏆</span><div><strong>CFA Investment Analysis Competition — National First Prize</strong> · 06/2021</div></li>
           <li><span>📜</span><div><strong>National Computer Rank Examination Level II Certificate</strong> · 09/2019</div></li>
           <li><span>📋</span><div><strong>Qualifications for Securities Practitioners</strong> — Securities Market Basic Laws &amp; Regulations; Financial Market Basic Knowledge; Securities Investment Consultant Business · 04/2019 &amp; 09/2019</div></li>
           <li><span>📊</span><div><strong>Certified Management Accountant (CMA) Part 2 Passed</strong> — Strategic Financial Management</div></li>
