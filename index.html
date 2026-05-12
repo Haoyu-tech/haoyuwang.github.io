@@ -7,23 +7,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sidebar-w: 270px;
-    --blue: #52adc8;
-    --dark-blue: #2a6496;
-    --text: #333;
-    --muted: #666;
-    --light: #f9f9f9;
-    --border: #e0e0e0;
-    --link: #52adc8;
+    --sidebar-w: 258px;
+    --accent: #1a3a5c;
+    --text: #111;
+    --muted: #555;
+    --border: #ccc;
+    --link: #1a3a5c;
+    --bg: #f8f8f8;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: Georgia, 'Lora', 'Source Sans 3', serif;
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.7;
     color: var(--text);
     background: #fff;
   }
@@ -34,7 +33,7 @@
   .wrapper {
     display: flex;
     min-height: 100vh;
-    max-width: 1280px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
@@ -42,58 +41,62 @@
   .sidebar {
     width: var(--sidebar-w);
     flex-shrink: 0;
-    padding: 40px 20px 40px 24px;
+    padding: 44px 18px 44px 24px;
     border-right: 1px solid var(--border);
     position: sticky;
     top: 0;
     height: 100vh;
     overflow-y: auto;
-    background: #fff;
+    background: var(--bg);
   }
 
   .photo-placeholder {
-    width: 160px;
-    height: 160px;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #ddeef6 0%, #c0dcea 100%);
+    width: 148px;
+    height: 148px;
+    border-radius: 2px;
+    background: #d8e4ee;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Lora', serif;
-    font-size: 48px;
-    color: var(--dark-blue);
-    margin-bottom: 14px;
+    font-family: Georgia, serif;
+    font-size: 44px;
+    color: var(--accent);
+    margin-bottom: 16px;
   }
 
   .sidebar h3 {
-    font-family: 'Lora', serif;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    line-height: 1.3;
+    font-family: Georgia, 'Lora', serif;
+    font-size: 16.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    line-height: 1.35;
+    color: var(--text);
   }
 
   .sidebar-role {
-    font-size: 14px;
+    font-size: 12.5px;
     color: var(--muted);
-    margin-bottom: 16px;
-    line-height: 1.5;
+    margin-bottom: 18px;
+    line-height: 1.55;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .sidebar-follow {
-    font-size: 11px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
     color: var(--muted);
     border-top: 1px solid var(--border);
-    padding-top: 12px;
+    padding-top: 14px;
     margin-bottom: 10px;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .sidebar-links {
     list-style: none;
-    font-size: 13.5px;
-    margin-bottom: 20px;
+    font-size: 12.5px;
+    margin-bottom: 22px;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .sidebar-links li {
@@ -102,75 +105,84 @@
     align-items: flex-start;
     gap: 8px;
     color: var(--muted);
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   .sidebar-links li svg {
-    width: 14px; height: 14px;
+    width: 13px; height: 13px;
     fill: none; stroke: var(--muted); stroke-width: 1.5;
     flex-shrink: 0;
-    margin-top: 3px;
+    margin-top: 4px;
   }
 
-  .sidebar-links a { color: var(--link); }
+  .sidebar-links a { color: var(--accent); }
 
   .sidebar-nav {
     border-top: 1px solid var(--border);
     padding-top: 16px;
     list-style: none;
-    font-size: 14px;
+    font-size: 12.5px;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
-  .sidebar-nav li { margin-bottom: 2px; }
+  .sidebar-nav li { margin-bottom: 3px; }
 
   .sidebar-nav a {
     display: block;
-    padding: 4px 0;
-    color: var(--text);
-    font-weight: 600;
+    padding: 3px 0;
+    color: var(--muted);
+    font-weight: 400;
   }
 
-  .sidebar-nav a:hover { color: var(--link); text-decoration: none; }
+  .sidebar-nav a:hover { color: var(--accent); text-decoration: none; }
 
   /* ── MAIN ── */
   .content {
     flex: 1;
-    padding: 32px 44px 56px 44px;
-    max-width: 880px;
+    padding: 44px 56px 64px 52px;
+    max-width: 840px;
   }
 
-  .section { margin-bottom: 36px; }
+  .section { margin-bottom: 40px; }
 
   .content h1 {
-    font-family: 'Lora', serif;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    font-family: Georgia, 'Lora', serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--text);
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .content h2 {
-    font-family: 'Lora', serif;
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
+    font-family: Georgia, 'Lora', serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #999;
     scroll-margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text);
   }
 
   .content p {
     margin-bottom: 8px;
-    font-size: 14.5px;
-    color: #444;
+    font-size: 14px;
+    color: #222;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   /* Education */
   .edu-item {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: 'Source Sans 3', sans-serif;
   }
   .edu-item:last-child { border-bottom: none; margin-bottom: 0; }
 
@@ -183,65 +195,74 @@
   }
 
   .edu-deg {
-    font-weight: 700;
-    font-size: 15.5px;
+    font-weight: 600;
+    font-size: 14.5px;
   }
 
   .edu-period {
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: var(--muted);
     white-space: nowrap;
     font-family: 'Source Code Pro', monospace;
   }
 
   .edu-detail {
-    font-size: 14.5px;
+    font-size: 13.5px;
     color: var(--muted);
     margin-top: 2px;
   }
 
+  /* Status tags — plain italic, no colour fill */
   .badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    vertical-align: middle;
-    margin-left: 6px;
+    display: inline;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+    vertical-align: baseline;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    letter-spacing: 0;
+    margin-left: 0;
   }
+  .badge::before { content: "["; }
+  .badge::after  { content: "]"; }
 
-  .badge-blue   { background: #e8f4fa; color: var(--dark-blue); }
-  .badge-green  { background: #e8f4ea; color: #2e7d32; }
-  .badge-orange { background: #fff3e0; color: #e65100; }
-  .badge-purple { background: #f3e5f5; color: #6a1b9a; }
-  .badge-review { background: #fff8e1; color: #f57f17; }
+  .badge-blue, .badge-green, .badge-orange,
+  .badge-purple, .badge-review {
+    background: none;
+    color: var(--muted);
+    padding: 0;
+  }
 
   /* Skills */
   .skills-top {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .skill-item {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 14.5px;
-    color: #444;
+    margin-bottom: 9px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .skill-item:last-child { border-bottom: none; }
-
-  .skill-item strong { color: var(--dark-blue); }
+  .skill-item strong { color: var(--accent); }
 
   /* Experience */
   .exp-item {
     margin-bottom: 14px;
     padding-bottom: 14px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ebebeb;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .exp-item:last-child { border-bottom: none; }
@@ -255,7 +276,7 @@
     margin-bottom: 1px;
   }
 
-  .exp-title { font-weight: 700; font-size: 15px; }
+  .exp-title { font-weight: 600; font-size: 14.5px; }
   .exp-period {
     font-size: 12.5px;
     color: var(--muted);
@@ -265,27 +286,48 @@
 
   .exp-org {
     font-size: 13.5px;
-    color: var(--dark-blue);
-    font-weight: 600;
+    color: var(--accent);
+    font-style: italic;
     margin-bottom: 4px;
   }
 
   .exp-ul {
     padding-left: 18px;
     font-size: 13.5px;
-    color: #555;
+    color: #444;
   }
 
   .exp-ul li { margin-bottom: 3px; }
 
-  /* Publications */
+  /* Publications — numbered list style */
+  .paper-list {
+    list-style: none;
+    counter-reset: pub-counter;
+  }
+
   .paper-item {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
+    counter-increment: pub-counter;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    gap: 14px;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .paper-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .paper-item::before {
+    content: "[" counter(pub-counter) "]";
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: 'Source Code Pro', monospace;
+    flex-shrink: 0;
+    padding-top: 2px;
+    min-width: 30px;
+  }
+
+  .paper-body { flex: 1; }
 
   .paper-row {
     display: flex;
@@ -293,61 +335,63 @@
     align-items: flex-start;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .paper-title {
-    font-family: 'Lora', serif;
-    font-size: 16px;
+    font-size: 14.5px;
     font-weight: 600;
-    color: var(--dark-blue);
-    line-height: 1.4;
+    color: var(--text);
+    line-height: 1.45;
     flex: 1;
   }
 
   .paper-date {
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--muted);
     font-family: 'Source Code Pro', monospace;
     white-space: nowrap;
   }
 
   .paper-venue {
-    font-size: 14px;
-    color: #555;
-    margin-top: 2px;
+    font-size: 13.5px;
+    color: #444;
+    margin-top: 1px;
   }
 
-  .paper-venue em { color: var(--dark-blue); font-style: italic; }
+  .paper-venue em { font-style: italic; color: #222; }
 
   /* Awards */
   .award-list {
     list-style: none;
     font-size: 13.5px;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .award-list li {
-    padding: 4px 0;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    gap: 8px;
-    color: #444;
+    padding: 5px 0;
+    border-bottom: 1px solid #ebebeb;
+    color: #333;
+    font-size: 13.5px;
+    line-height: 1.6;
   }
 
   .award-list li:last-child { border-bottom: none; }
-  .award-list strong { color: var(--text); font-weight: 700; }
+  .award-list strong { color: var(--text); font-weight: 600; }
 
   /* Footer */
   .footer {
     border-top: 1px solid var(--border);
     padding: 20px 56px;
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--muted);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
   }
 
   .footer-links { display: flex; gap: 16px; }
@@ -365,11 +409,35 @@
     .content { padding: 28px 20px 60px; }
     .footer { padding: 20px; }
     .paper-row, .exp-row, .edu-row { flex-direction: column; gap: 2px; }
+    .paper-item { flex-direction: column; gap: 4px; }
+    .paper-item::before { min-width: auto; }
   }
 
-  .schedule-table { margin-top:8px; width:100%; border-collapse:collapse; font-size:13px; color:#555; }
+  .schedule-table { margin-top:8px; width:100%; border-collapse:collapse; font-size:13px; color:#555; font-family:'Source Sans 3',sans-serif; }
   .schedule-table td { padding:3px 12px 3px 0; vertical-align:top; }
-  .schedule-table td:first-child { white-space:nowrap; color:var(--muted); font-family:'Source Code Pro',monospace; font-size:12.5px; width:80px; }
+  .schedule-table td:first-child { white-space:nowrap; color:var(--muted); font-family:'Source Code Pro',monospace; font-size:12px; width:80px; }
+
+  /* CV download button */
+  .cv-btn {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 5px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    font-size: 12px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cv-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
 </style>
 </head>
 <body>
@@ -384,6 +452,8 @@
       PhD Student in Financial Mathematics<br>
       <small>University of Auckland</small>
     </p>
+
+    <a href="cv.pdf" download class="cv-btn">Download CV (PDF)</a>
 
     <p class="sidebar-follow">Follow</p>
     <ul class="sidebar-links">
@@ -425,7 +495,7 @@
       <section class="section" id="about">
         <h1>About</h1>
         <p>
-          PhD student in Financial Mathematics at the <strong>University of Auckland</strong>, specialising in mathematical finance, stochastic control, and ML/DL/RL for financial markets. Published in <em>Information Processing and Management</em> and <em>Financial Innovation</em>, with additional working papers available on SSRN.
+          PhD student in Financial Mathematics at the <strong>University of Auckland</strong>, specialising in mathematical finance, stochastic control, and ML/DL/RL for financial markets. Published in <em>Financial Innovation</em> and <em>Information Processing and Management</em>, with additional working papers available on SSRN.
         </p>
       </section>
 
@@ -433,89 +503,93 @@
       <section class="section" id="publications">
         <h2>Working Papers and Projects</h2>
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Hybrid Reinforcement Learning with an Avellaneda–Stoikov Backbone for Order-Book-Aware High-Frequency Market Making under Non-Stationary Microstructure</div>
-            <div class="paper-date">2026</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-orange">In Process</span>
-            &nbsp;·&nbsp;
-            <a href="https://github.com/Haoyu-tech/Hybrid-Reinforcement-Learning-with-an-Avellaneda--Stoikov-Backbone" target="_blank" style="font-size:13.5px; display:inline-flex; align-items:center; gap:5px;">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" style="vertical-align:middle;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub 1
-            </a>
-            &nbsp;·&nbsp;
-            <a href="https://github.com/Haoyu-tech/An-Avellaneda-Stoikov-market-making-research-project-built-on-real-Binance-Futures-BTCUSDT-L2-data." target="_blank" style="font-size:13.5px; display:inline-flex; align-items:center; gap:5px;">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" style="vertical-align:middle;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub 2
-            </a>
-          </div>
-          <p style="font-size:14px; color:#555; margin-top:8px;">
-            A hybrid framework combining the Avellaneda–Stoikov market-making model with reinforcement learning to adaptively quote bid/ask spreads under non-stationary order-book microstructure.
-          </p>
-        </div>
+        <ol class="paper-list">
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Optimizing Stock Trading Strategies with WEI and Diff-RMSE Factor Identification Enhanced Deep Learning Models</div>
-            <div class="paper-date">05/2026</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-green">Accepted</span> — <em>Financial Innovation</em>
-          </div>
-        </div>
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Optimizing Stock Market Prediction and Stock Trading Strategies with Deep Learning Models Enhanced by Nonlinear Feature Identification and Robust Prediction Evaluation</div>
+                <div class="paper-date">2026</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-green">Published</span> &mdash;
+                <em>Financial Innovation</em>, 12, 117 (2026).
+                <a href="https://doi.org/10.1186/s40854-026-00929-6" target="_blank">https://doi.org/10.1186/s40854-026-00929-6</a>
+              </div>
+            </div>
+          </li>
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Information-aware Valuation and Dynamic Pricing for Textual Data in Mobile Environments</div>
-            <div class="paper-date">04/2026</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-green">Published</span> — <em>Information Processing and Management</em>, Vol. 63, Article 104855 &nbsp;·&nbsp;
-            <a href="https://doi.org/10.1016/j.ipm.2026.104855" target="_blank" style="font-size:13.5px;">DOI</a>
-          </div>
-          <p style="font-size:14px; color:#555; margin-top:8px;">
-            Wenze Xiong, Yetong Wang, Wanxin Li, Hao Guo, Jie Zhang, <strong>Haoyu Wang</strong>. Proposes an information-aware textual data valuation method based on weighted perplexity entropy (WPE) and a reinforcement learning–driven dynamic pricing mechanism, achieving up to 230% profit improvement over existing baselines.
-          </p>
-        </div>
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Information-aware Valuation and Dynamic Pricing for Textual Data in Mobile Environments</div>
+                <div class="paper-date">2026</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-green">Published</span> &mdash;
+                <em>Information Processing and Management</em>, Vol. 63, Article 104855.
+                <a href="https://doi.org/10.1016/j.ipm.2026.104855" target="_blank">https://doi.org/10.1016/j.ipm.2026.104855</a>
+              </div>
+            </div>
+          </li>
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Automated Machine Learning for Real Estate Valuation – Revisit with England Cases</div>
-            <div class="paper-date">10/2025</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-review">Working Paper</span>
-            &nbsp;·&nbsp;
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5563792" target="_blank" style="font-size:13.5px;">SSRN · Oct 2025</a>
-          </div>
-        </div>
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Optimal Profit-Making Strategies in Stock Market with Algorithmic Trading</div>
+                <div class="paper-date">2024</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-green">Published</span> &mdash;
+                <em>Quantitative Finance and Economics</em>, American Institute of Mathematical Sciences (AIMS).
+              </div>
+            </div>
+          </li>
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Entropy-Regularized Portfolio Optimization with Reinforcement Learning Control</div>
-            <div class="paper-date">05/2025</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-review">Working Paper</span>
-            &nbsp;·&nbsp;
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5276183" target="_blank" style="font-size:13.5px;">SSRN · May 2025</a>
-          </div>
-          <p style="font-size:14px; color:#555; margin-top:8px;">
-            Convex optimization framework enhanced with reinforcement learning–based control for dynamic portfolio management.
-          </p>
-        </div>
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Hybrid Reinforcement Learning with an Avellaneda–Stoikov Backbone for Order-Book-Aware High-Frequency Market Making under Non-Stationary Microstructure</div>
+                <div class="paper-date">2026</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-orange">In Preparation</span> &mdash;
+                <a href="https://github.com/Haoyu-tech/Hybrid-Reinforcement-Learning-with-an-Avellaneda--Stoikov-Backbone" target="_blank">GitHub (model)</a>
+                &nbsp;&middot;&nbsp;
+                <a href="https://github.com/Haoyu-tech/An-Avellaneda-Stoikov-market-making-research-project-built-on-real-Binance-Futures-BTCUSDT-L2-data." target="_blank">GitHub (data)</a>
+              </div>
+            </div>
+          </li>
 
-        <div class="paper-item">
-          <div class="paper-row">
-            <div class="paper-title">Optimal Profit-Making Strategies in Stock Market with Algorithmic Trading</div>
-            <div class="paper-date">09/2024</div>
-          </div>
-          <div class="paper-venue">
-            <span class="badge badge-green">Published</span> — American Institute of Mathematical Sciences (AIMS) · <em>Quantitative Finance and Economics</em>
-          </div>
-        </div>
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Automated Machine Learning for Real Estate Valuation – Revisit with England Cases</div>
+                <div class="paper-date">2025</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-review">Working Paper</span> &mdash;
+                SSRN.
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5563792" target="_blank">https://ssrn.com/abstract=5563792</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="paper-item">
+            <div class="paper-body">
+              <div class="paper-row">
+                <div class="paper-title">Entropy-Regularized Portfolio Optimization with Reinforcement Learning Control</div>
+                <div class="paper-date">2025</div>
+              </div>
+              <div class="paper-venue">
+                <span class="badge badge-review">Working Paper</span> &mdash;
+                SSRN.
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5276183" target="_blank">https://ssrn.com/abstract=5276183</a>
+              </div>
+            </div>
+          </li>
+
+        </ol>
 
       </section>
 
@@ -609,10 +683,10 @@
       <section class="section" id="awards">
         <h2>Certifications &amp; Awards</h2>
         <ul class="award-list">
-          <li><span>🎓</span><div><strong>Xi'an Jiaotong-Liverpool University Entrance Scholarship</strong> · 09/2022</div></li>
-          <li><span>📜</span><div><strong>National Computer Rank Examination Level II Certificate</strong> · 09/2019</div></li>
-          <li><span>📋</span><div><strong>Qualifications for Securities Practitioners</strong> — Securities Market Basic Laws &amp; Regulations; Financial Market Basic Knowledge; Securities Investment Consultant Business · 04/2019 &amp; 09/2019</div></li>
-          <li><span>📊</span><div><strong>Certified Management Accountant (CMA) Part 2 Passed</strong> — Strategic Financial Management</div></li>
+          <li><strong>Xi'an Jiaotong-Liverpool University Entrance Scholarship</strong> · 09/2022</li>
+          <li><strong>National Computer Rank Examination Level II Certificate</strong> · 09/2019</li>
+          <li><strong>Qualifications for Securities Practitioners</strong> — Securities Market Basic Laws &amp; Regulations; Financial Market Basic Knowledge; Securities Investment Consultant Business · 04/2019 &amp; 09/2019</li>
+          <li><strong>Certified Management Accountant (CMA) Part 2 Passed</strong> — Strategic Financial Management</li>
         </ul>
       </section>
 
