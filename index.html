@@ -430,13 +430,35 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--accent);
-    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
     transition: background 0.15s, color 0.15s;
   }
   .cv-btn:hover {
     background: var(--accent);
     color: #fff;
-    text-decoration: none;
+  }
+
+  @media print {
+    .wrapper { display: block; }
+    .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+      padding: 24px 28px;
+      background: #fff;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .sidebar > * { flex-shrink: 0; }
+    .sidebar-nav { display: none; }
+    .cv-btn { display: none; }
+    .content { padding: 24px 28px; }
+    .footer { display: none; }
+    a { color: #1a3a5c !important; text-decoration: none !important; }
   }
 </style>
 </head>
@@ -453,7 +475,7 @@
       <small>University of Auckland</small>
     </p>
 
-    <a href="cv.pdf" download class="cv-btn">Download CV (PDF)</a>
+    <button onclick="window.print()" class="cv-btn">Download CV (PDF)</button>
 
     <p class="sidebar-follow">Follow</p>
     <ul class="sidebar-links">
