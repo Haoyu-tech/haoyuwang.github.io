@@ -207,12 +207,82 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
 }
 @media (prefers-reduced-motion:reduce){.pc{transition:none}.pc:hover{transform:none}}
 </style>
+<style id="editorial-refresh">
+/* Editorial refinement: quieter surfaces, a clear hierarchy and cohesive cards. */
+:root{--bg:#f3f5f7;--paper:#fff;--ink:#15243a;--muted:#62738a;--rule:#e3e9ef;--accent:#127c83;--accent-soft:#eaf5f4;--shadow:0 4px 22px rgba(21,36,58,.035);--panel:#f7f9fb;--warm:#a96a18}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c121b;--paper:#151e2b;--ink:#edf3fa;--muted:#9aabc0;--rule:#283548;--accent:#6dd2cb;--accent-soft:#1b343c;--shadow:0 8px 28px rgba(0,0,0,.13);--panel:#1a2534;--warm:#e4b574}}
+:root[data-theme="dark"]{--bg:#0c121b;--paper:#151e2b;--ink:#edf3fa;--muted:#9aabc0;--rule:#283548;--accent:#6dd2cb;--accent-soft:#1b343c;--shadow:0 8px 28px rgba(0,0,0,.13);--panel:#1a2534;--warm:#e4b574}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1260px;padding-block:24px 48px;padding-inline:max(24px,env(safe-area-inset-left))}
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 4px 22px}
+.site-brand{color:var(--ink);text-decoration:none;font-size:14px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--rule);border-radius:10px;color:var(--accent);background:var(--paper);font-family:var(--f-mono);font-size:11px;font-weight:600}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a,.theme-toggle{padding:7px 11px;font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;border-radius:8px;border:0;background:none;font-family:inherit;cursor:pointer}
+.nav-links a:hover,.theme-toggle:hover{color:var(--ink);background:var(--accent-soft)}
+.theme-toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);margin-left:8px;background:var(--paper)}
+.theme-toggle svg{width:14px;height:14px}
+.bento{gap:18px}
+.bento>.t{border-radius:20px;box-shadow:var(--shadow);padding:28px}
+.bento>.top{padding:36px;gap:30px;border-color:color-mix(in srgb,var(--accent) 13%,var(--rule))}
+.top-grid{grid-template-columns:144px minmax(0,.95fr) minmax(0,1.1fr);gap:28px}
+.ava{width:144px;height:164px;border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.id .lbl{font-size:9.5px;letter-spacing:.09em}
+.id h1{font-size:clamp(35px,3.5vw,47px);line-height:1.08;margin-top:10px;letter-spacing:-.045em}
+.role{font-size:14px;line-height:1.5;margin-top:12px}
+.role span{font-size:12px;line-height:1.7;margin-top:3px}
+.stmt{padding-left:28px}
+.stmt p.big{font-size:clamp(22px,2.25vw,29px);font-weight:600;line-height:1.35;letter-spacing:-.03em}
+.stmt p.sub{font-size:13px;line-height:1.8;margin-top:13px}
+.btn{border-radius:9px;padding:9px 13px;font-size:12px;transition:background .15s,border-color .15s}
+.links{gap:7px;margin-top:18px}
+.mailrow{margin-top:14px;gap:12px}
+.mail{font-size:11px}.copy{font-size:10px}
+.kpis{gap:0;background:var(--panel);border:1px solid var(--rule);border-radius:15px;overflow:hidden}
+.kpi{position:relative;border-radius:0;background:none;padding:22px 21px;display:grid;align-content:start;gap:9px;min-height:126px;text-decoration:none;color:var(--ink);transition:background .15s}
+.kpi+.kpi{border-left:1px solid var(--rule)}
+.kpi:hover{background:var(--accent-soft)}
+.kpi-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.kpi .v{font-size:36px;font-weight:700;letter-spacing:-.045em;line-height:1.15;color:var(--ink)}
+.kpi-icon{width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--accent);flex-shrink:0}
+.kpi-icon svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.kpi .d{margin:0;font-size:11.5px;line-height:1.6;letter-spacing:0;color:var(--muted)}
+.kpi-event .v{font-size:27px;letter-spacing:-.04em;color:var(--warm)}
+.kpi-event .kpi-icon{color:var(--warm)}
+.kpi .d span{display:block;color:var(--muted);font-size:10px}
+.th{margin-bottom:20px;gap:10px}.t h2{font-size:22px;letter-spacing:-.025em;font-weight:700}
+.lbl{font-size:10px;letter-spacing:.09em}
+.tabs{gap:10px;margin-bottom:16px}.tabs button{padding:13px 16px;border-radius:11px;font-size:14px;line-height:1.6;background:var(--panel)}
+.tabs button[aria-selected="true"]{background:var(--accent-soft);box-shadow:none}
+.as{border-radius:12px}.as-top,.as-key{padding:12px 16px}.as-key{font-size:11px;gap:14px}
+.stream .no{font-family:var(--f-mono);font-size:28px;font-weight:500;opacity:1;color:var(--accent)}
+.stream h3{font-size:17px;margin-top:16px}.stream p{font-size:13px;line-height:1.8}.stream ul{font-size:12px;gap:5px;padding-left:17px}
+.pc{gap:13px;min-height:205px}.pc:hover{box-shadow:0 10px 28px rgba(0,0,0,.075);transform:translateY(-3px)}
+.pc h3{font-size:16px;font-weight:700;line-height:1.5}.pc p{font-size:12.5px;line-height:1.8}.pc .go{padding-top:10px;font-size:10px}
+.chip{font-size:9px;padding:4px 8px;border-radius:6px;letter-spacing:.015em}
+.bento>.ph-row{background:none;border:none;box-shadow:none;padding:12px 3px 2px}
+.hold td.t{background:none;border:none;border-bottom:1px solid var(--rule);border-radius:0;box-shadow:none;line-height:1.7;font-size:13px}
+.hold td{padding:18px 10px;font-size:13px}.hold td.t span{font-size:11.5px;margin-top:4px}
+.xr{padding-block:17px;border-bottom-style:solid}.xr h4{font-size:14px}.xr p{font-size:12.5px;line-height:1.8}.xo{font-size:12.5px;margin-top:3px}
+footer{padding:14px 3px;font-size:10px;border-top:1px solid var(--rule);margin-top:8px}
+@media(max-width:1080px){.top-grid{grid-template-columns:132px minmax(0,1fr)}.ava{width:132px;height:146px}.stmt{padding-left:0;padding-top:22px}.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi:nth-child(4){border-left:0}.kpi:nth-child(n+4){border-top:1px solid var(--rule)}.kpi-event{grid-column:span 2}.kpi{min-height:116px}}
+@media(max-width:640px){.wrap{padding-inline:14px;padding-block:14px 30px}.site-nav{align-items:flex-start;gap:10px;margin-bottom:16px}.site-brand{font-size:12px}.nav-links{gap:1px;max-width:220px}.nav-links a{font-size:10px;padding:5px 7px}.theme-toggle{margin-left:0;padding:5px 7px;font-size:10px}.bento{gap:12px}.bento>.t{padding:22px 19px;border-radius:16px}.bento>.top{padding:24px 20px;gap:24px}.top-grid{grid-template-columns:72px minmax(0,1fr);gap:15px}.ava{width:72px;height:90px;border-radius:12px}.id h1{font-size:29px}.id .lbl{font-size:8px;letter-spacing:.045em}.role{font-size:12px;margin-top:10px}.role span{font-size:10.5px}.links{margin-left:-87px;padding-top:10px}.mailrow{margin-left:-87px}.stmt p.big{font-size:23px}.stmt p.sub{font-size:12px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi{padding:18px 14px;min-height:110px}.kpi .v{font-size:30px}.kpi .d{font-size:10.5px}.kpi:nth-child(odd){border-left:0}.kpi:nth-child(even){border-left:1px solid var(--rule)}.kpi:nth-child(n+3){border-top:1px solid var(--rule)}.kpi-event{grid-column:1/-1;min-height:90px}.kpi-event .v{font-size:25px}.kpi-event .d span{display:inline;margin-left:5px}.tabs button{padding:11px 13px}.th .lbl{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pc,.btn,.kpi{transition:none}.pc:hover{transform:none}}
+
+</style>
 </head>
 <body>
 <div class="wrap">
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-brand" href="#profile"><span class="brand-mark" aria-hidden="true">HW</span>Haoyu Wang</a>
+  <div class="nav-links"><a href="#research">Research</a><a href="#papers">Papers</a><a href="#projects">Projects</a><a href="#experience">Career</a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><span>Theme</span></button>
+  </div>
+</nav>
 <div class="bento">
 
-  <section class="t top s12" aria-label="Profile">
+  <section class="t top s12" id="profile" aria-label="Profile">
     <div class="top-grid">
       <img class="ava" src="avatar.jpg" alt="Portrait of Haoyu Wang" width="160" height="160">
       <div class="id">
@@ -231,14 +301,14 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
         <p class="sub">Empirical asset pricing and market microstructure, studied with stochastic control and machine learning.</p>
       </div>
     </div>
-    <div class="kpis">
-      <div class="kpi"><div class="v">3</div><div class="d">Journal articles</div></div>
-      <div class="kpi"><div class="v">3</div><div class="d">Working papers</div></div>
-      <div class="kpi"><div class="v">9</div><div class="d">Research &amp; industry roles</div></div>
-      <div class="kpi"><div class="v">12</div><div class="d">Public GitHub repos</div></div>
-      <div class="kpi"><div class="v">AFBC</div><div class="d">Main program, Dec 2026</div></div>
-    </div>
-  </section>
+    <div class="kpis" aria-label="Research at a glance">
+<a class="kpi" href="#papers"><div class="kpi-top"><div class="v">3</div><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h7a3 3 0 0 1 3 3v13a4 4 0 0 0-3-2H3Z"/><path d="M13 7a3 3 0 0 1 3-3h5v14h-5a4 4 0 0 0-3 2"/></svg></span></div><div class="d">Journal articles</div></a>
+<a class="kpi" href="#papers"><div class="kpi-top"><div class="v">3</div><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6Z"/><path d="M14 3v5h5M9 12h7M9 16h5"/></svg></span></div><div class="d">Working papers</div></a>
+<a class="kpi" href="#experience"><div class="kpi-top"><div class="v">9</div><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a4 4 0 0 1 3 4v2"/></svg></span></div><div class="d">Research &amp; industry roles</div></a>
+<a class="kpi" href="https://github.com/Haoyu-tech?tab=repositories" target="_blank" rel="noopener"><div class="kpi-top"><div class="v">12</div><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg></span></div><div class="d">Public GitHub repos</div></a>
+<a class="kpi kpi-event" href="#conference"><div class="kpi-top"><div class="v">AFBC</div><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v5m10-5v5M3 11h18m-12 4h2m3 0h2"/></svg></span></div><div class="d">Main program <span>December 2026</span></div></a>
+</div>
+</section>
 
   <section class="t s12" id="lab">
     <div class="th"><h2>Strategy lab</h2><span class="lbl">Interactive · simulated data</span></div>
@@ -358,7 +428,7 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
     </div>
   </section>
 
-  <section class="t s12 ph-row"><div class="th" style="margin:0"><h2>Selected projects</h2><a class="btn" href="https://github.com/Haoyu-tech?tab=repositories" target="_blank" rel="noopener">All 12 repositories ↗</a></div></section>
+  <section class="t s12 ph-row" id="projects"><div class="th" style="margin:0"><h2>Selected projects</h2><a class="btn" href="https://github.com/Haoyu-tech?tab=repositories" target="_blank" rel="noopener">All 12 repositories ↗</a></div></section>
   <a class="t pc s4" href="https://github.com/Haoyu-tech/An-Avellaneda-Stoikov-market-making-research-project-built-on-real-Binance-Futures-BTCUSDT-L2-data." target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">Market making</span><span class="chip">L2</span></div><span class="star mono">★ 16</span></div><h3>Avellaneda–Stoikov market making on BTCUSDT L2</h3><p>A market-making research project built on real Binance Futures BTCUSDT level-2 order-book data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
   <a class="t pc s4" href="https://github.com/Haoyu-tech/Hybrid-Reinforcement-Learning-with-an-Avellaneda--Stoikov-Backbone" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">RL</span><span class="chip">Microstructure</span></div><span class="star mono">★ 6</span></div><h3>Hybrid RL with an Avellaneda–Stoikov backbone</h3><p>Order-book-aware high-frequency market making under non-stationary microstructure, with RL layered on an AS backbone.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
   <a class="t pc s4" href="https://github.com/Haoyu-tech/lob-replay" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">L3 LOB</span></div></div><h3>LOB replay</h3><p>Replay tooling for BTC level-3 limit order book data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
@@ -401,7 +471,7 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
     </ul>
     <div class="lbl sub-h">Presentations &amp; competitions</div>
     <ul class="ls">
-      <li><b>39th AFBC, UNSW Sydney</b><span>Main program · Dec 2026</span></li>
+      <li id="conference"><b>39th AFBC, UNSW Sydney</b><span>Main program · Dec 2026</span></li>
       <li><b>Citadel Trading Invitational</b><span>Australia · 2025</span></li>
     </ul>
     <div class="lbl sub-h">Teaching</div>
@@ -422,6 +492,15 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
 </div>
 </div>
 
+<script>
+(function(){
+  const root=document.documentElement,button=document.getElementById('theme-toggle');
+  let saved;try{saved=localStorage.getItem('haoyu-theme')}catch(e){}
+  function apply(mode){root.dataset.theme=mode;button.setAttribute('aria-label','Switch to '+(mode==='dark'?'light':'dark')+' theme');button.setAttribute('aria-pressed',String(mode==='dark'));}
+  apply(saved==='dark'||saved==='light'?saved:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+  button.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';apply(next);try{localStorage.setItem('haoyu-theme',next)}catch(e){}});
+})();
+</script>
 <script>
 (function(){
   /* ---------- Gantt ---------- */
@@ -669,3 +748,4 @@ table.hold{width:100%;border-collapse:collapse;min-width:620px}
 </script>
 </body>
 </html>
+
