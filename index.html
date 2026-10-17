@@ -271,13 +271,16 @@ footer{padding:14px 3px;font-size:10px;border-top:1px solid var(--rule);margin-t
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pc,.btn,.kpi{transition:none}.pc:hover{transform:none}}
 
 </style>
+<link rel="stylesheet" href="tech-theme.css">
 </head>
 <body>
+<canvas id="tech-background" aria-hidden="true"></canvas>
 <div class="wrap">
 <nav class="site-nav" aria-label="Main navigation">
   <a class="site-brand" href="#profile"><span class="brand-mark" aria-hidden="true">HW</span>Haoyu Wang</a>
   <div class="nav-links"><a href="#research">Research</a><a href="#papers">Papers</a><a href="#projects">Projects</a><a href="#experience">Career</a>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><span>Theme</span></button>
+    <button class="motion-toggle" id="motion-toggle" type="button">Motion on</button>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><span>Theme</span></button>
   </div>
 </nav>
 <div class="bento">
@@ -290,7 +293,8 @@ footer{padding:14px 3px;font-size:10px;border-top:1px solid var(--rule);margin-t
         <h1>Haoyu Wang</h1>
         <p class="role">PhD Student in Financial Engineering<span>University of Auckland · Dept. of Accounting and Finance</span></p>
         <div class="links">
-          <a class="btn pri" href="https://haoyu-tech.github.io/haoyuwang.github.io/cv.html" target="_blank" rel="noopener">CV ↗</a>
+          <a class="btn pri" href="cv.html" target="_blank" rel="noopener">View CV ↗</a>
+<a class="btn" href="Haoyu-Wang-CV.pdf" download>CV PDF ↓</a>
           <a class="btn" href="https://github.com/Haoyu-tech" target="_blank" rel="noopener">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/haoyu-wang-05a224350" target="_blank" rel="noopener">LinkedIn</a>
         </div>
@@ -429,12 +433,13 @@ footer{padding:14px 3px;font-size:10px;border-top:1px solid var(--rule);margin-t
   </section>
 
   <section class="t s12 ph-row" id="projects"><div class="th" style="margin:0"><h2>Selected projects</h2><a class="btn" href="https://github.com/Haoyu-tech?tab=repositories" target="_blank" rel="noopener">All 12 repositories ↗</a></div></section>
-  <a class="t pc s4" href="https://github.com/Haoyu-tech/An-Avellaneda-Stoikov-market-making-research-project-built-on-real-Binance-Futures-BTCUSDT-L2-data." target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">Market making</span><span class="chip">L2</span></div><span class="star mono">★ 16</span></div><h3>Avellaneda–Stoikov market making on BTCUSDT L2</h3><p>A market-making research project built on real Binance Futures BTCUSDT level-2 order-book data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
+  <a class="t pc llm-feature s12" id="llm-project" href="https://github.com/Haoyu-tech/FactorForge-LLM-Factor-generation" target="_blank" rel="noopener"><div class="llm-copy"><span class="llm-kicker">Featured research / LLM × Asset pricing</span><h3>FactorForge<br>From economic ideas to auditable factors.</h3><p>LLM-guided factor research across US equities, China A-shares and crypto perpetuals. Generate interpretable expressions, evaluate predictive diagnostics and build out-of-sample portfolios in a unified research workspace.</p><div class="chips"><span class="chip">LLM research</span><span class="chip">US · A-shares · Crypto</span><span class="chip">Auditable validation</span></div><span class="go">Explore FactorForge on GitHub ↗</span></div><div class="llm-pipeline" aria-label="Research workflow"><div class="llm-step"><span>01</span>Economic hypothesis</div><div class="llm-connector"></div><div class="llm-step"><span>02</span>Factor expression</div><div class="llm-connector"></div><div class="llm-step"><span>03</span>Evaluation &amp; portfolios</div><div class="llm-note">Human-readable ideas.<br>Traceable research artifacts.</div></div></a>
+<a class="t pc s4" href="https://github.com/Haoyu-tech/An-Avellaneda-Stoikov-market-making-research-project-built-on-real-Binance-Futures-BTCUSDT-L2-data." target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">Market making</span><span class="chip">L2</span></div><span class="star mono">★ 16</span></div><h3>Avellaneda–Stoikov market making on BTCUSDT L2</h3><p>A market-making research project built on real Binance Futures BTCUSDT level-2 order-book data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
   <a class="t pc s4" href="https://github.com/Haoyu-tech/Hybrid-Reinforcement-Learning-with-an-Avellaneda--Stoikov-Backbone" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">RL</span><span class="chip">Microstructure</span></div><span class="star mono">★ 6</span></div><h3>Hybrid RL with an Avellaneda–Stoikov backbone</h3><p>Order-book-aware high-frequency market making under non-stationary microstructure, with RL layered on an AS backbone.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
   <a class="t pc s4" href="https://github.com/Haoyu-tech/lob-replay" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">HF</span><span class="chip">L3 LOB</span></div></div><h3>LOB replay</h3><p>Replay tooling for BTC level-3 limit order book data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
-  <a class="t pc s4" href="https://github.com/Haoyu-tech/astock-alpha-factor-lab" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">Mid/low freq</span><span class="chip">A-share</span><span class="chip">LightGBM</span></div><span class="star mono">★ 1</span></div><h3>A-share alpha factor lab</h3><p>Alpha158 and GTJA-191 factor library with a walk-forward LightGBM stock-selection strategy on Tushare Pro data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
-  <a class="t pc s4" href="https://github.com/Haoyu-tech/LLM---Factor-generation" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">Factors</span><span class="chip">LLM</span></div><span class="star mono">★ 2</span></div><h3>LLM factor generation</h3><p>Large language models proposing candidate quantitative factors for financial markets.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
-  <a class="t pc s4" href="https://github.com/Haoyu-tech/Momentum-is-all-you-need" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">Mid/low freq</span><span class="chip">US equities</span></div></div><h3>Momentum is all you need</h3><p>Momentum strategy research on S&amp;P 500 US stocks.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
+  <a class="t pc s6" href="https://github.com/Haoyu-tech/astock-alpha-factor-lab" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">Mid/low freq</span><span class="chip">A-share</span><span class="chip">LightGBM</span></div><span class="star mono">★ 1</span></div><h3>A-share alpha factor lab</h3><p>Alpha158 and GTJA-191 factor library with a walk-forward LightGBM stock-selection strategy on Tushare Pro data.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
+  
+  <a class="t pc s6" href="https://github.com/Haoyu-tech/Momentum-is-all-you-need" target="_blank" rel="noopener"><div class="pch"><div class="chips"><span class="chip">Mid/low freq</span><span class="chip">US equities</span></div></div><h3>Momentum is all you need</h3><p>Momentum strategy research on S&amp;P 500 US stocks.</p><span class="go">github.com/Haoyu-tech ↗</span></a>
 
   <section class="t s12" id="experience">
     <div class="th"><h2>Career</h2><span class="lbl">2018 → 2027</span></div>
@@ -746,6 +751,8 @@ footer{padding:14px 3px;font-size:10px;border-top:1px solid var(--rule);margin-t
   });
 })();
 </script>
+<script src="tech-background.js" defer></script>
 </body>
 </html>
+
 
