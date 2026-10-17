@@ -1,4 +1,4 @@
-/* Lightweight decorative constellation. No network or third-party dependencies. */
+/* Decorative light field. No mesh or connections between particles. */
 (() => {
   const canvas = document.getElementById('tech-background');
   if (!canvas) return;
@@ -7,7 +7,7 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const button = document.getElementById('motion-toggle');
   let width = 0, height = 0, nodes = [], request = null, previous = 0;
-  let paused = false, dark = false;
+  let paused = false, dark = false, phase = 0;
   try { paused = localStorage.getItem('haoyu-background-paused') === 'true'; } catch (_) {}
   const point = { x: -1000, y: -1000 };
   function colors() {
@@ -19,14 +19,23 @@
     const ratio = Math.min(devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    const count = reduced.matches ? 20 : width < 640 ? 24 : 66;
+    const count = reduced.matches ? 28 : width < 640 ? 42 : 110;
     nodes = Array.from({ length: count }, () => ({ x: Math.random() * width,
-      y: Math.random() * height, vx: (Math.random() - .5) * .24,
-      vy: (Math.random() - .5) * .24, r: .8 + Math.random() * 1.5 }));
+      y: Math.random() * height, vx: .12 + Math.random() * .32,
+      vy: -.08 - Math.random() * .2, r: .5 + Math.random() * 1.5,
+      glow: Math.random() > .8, offset: Math.random() * Math.PI * 2 }));
     draw(false);
   }
   function draw(move) {
     colors(); ctx.clearRect(0, 0, width, height);
+    if (move) phase += .012;
+    // A broad, slow sweep reads as light rather than a connecting line.
+    const sweepY = height * (.5 + Math.sin(phase * .16) * .55);
+    const sweep = ctx.createLinearGradient(0, sweepY - 100, 0, sweepY + 100);
+    sweep.addColorStop(0, 'transparent');
+    sweep.addColorStop(.5, dark ? 'rgba(80,195,235,.045)' : 'rgba(40,130,180,.025)');
+    sweep.addColorStop(1, 'transparent');
+    ctx.fillStyle = sweep; ctx.fillRect(0, 0, width, height);
     for (const p of nodes) {
       if (move) {
         p.x += p.vx; p.y += p.vy;
@@ -35,19 +44,16 @@
       }
       const dx = p.x - point.x, dy = p.y - point.y;
       const near = Math.max(0, 1 - Math.hypot(dx, dy) / 150);
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r + near, 0, Math.PI * 2);
-      ctx.fillStyle = dark ? `rgba(103,211,229,${.34 + near * .22})` : `rgba(47,105,154,${.30 + near * .18})`;
-      ctx.fill();
-    }
-    const distance = width < 640 ? 95 : 155;
-    for (let i = 0; i < nodes.length; i++) {
-      let links = 0;
-      for (let j = i + 1; j < nodes.length && links < 3; j++) {
-        const a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d > distance) continue;
-        ctx.strokeStyle = dark ? `rgba(103,211,229,${.16 * (1 - d / distance)})` : `rgba(47,105,154,${.14 * (1 - d / distance)})`;
-        ctx.lineWidth = .65; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); links++;
+      const shimmer = .75 + Math.sin(phase + p.offset) * .25;
+      if (p.glow) {
+        const halo = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 18);
+        halo.addColorStop(0, dark ? 'rgba(111,194,255,.20)' : 'rgba(43,113,184,.13)');
+        halo.addColorStop(1, 'transparent');
+        ctx.fillStyle = halo; ctx.fillRect(p.x - 18, p.y - 18, 36, 36);
       }
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r + near * .7, 0, Math.PI * 2);
+      ctx.fillStyle = dark ? `rgba(140,222,255,${(.55 + near * .25) * shimmer})` : `rgba(47,105,154,${(.4 + near * .2) * shimmer})`;
+      ctx.fill();
     }
   }
   function frame(now) {
@@ -80,3 +86,4 @@
   new MutationObserver(() => { colors(); draw(false); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   resize(); sync();
 })();
+

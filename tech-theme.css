@@ -23,3 +23,19 @@ body{background:radial-gradient(ellipse at 8% 4%,color-mix(in srgb,var(--tech-gl
 .llm-note{font:10px var(--f-mono);color:var(--muted);border-top:1px solid var(--rule);margin-top:15px;padding-top:12px;line-height:1.7}
 @media(max-width:760px){.llm-feature{grid-template-columns:1fr;gap:20px!important;padding:26px 22px!important}.llm-pipeline{padding:16px}.motion-toggle{font-size:10px;padding:5px 7px}}
 @media print{#tech-background,.motion-toggle{display:none!important}body{background:white!important}}
+
+/* Atmospheric light field: no mesh, grid or connections between particles. */
+body{background:radial-gradient(ellipse at 5% 8%,color-mix(in srgb,var(--tech-glow) 95%,transparent),transparent 50%),radial-gradient(ellipse at 92% 24%,color-mix(in srgb,#7265df 17%,transparent),transparent 43%),radial-gradient(ellipse at 45% 95%,color-mix(in srgb,var(--tech-accent) 12%,transparent),transparent 55%),var(--tech-field)}
+.bento>.top{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(125deg,color-mix(in srgb,var(--paper) 95%,var(--tech-accent)),color-mix(in srgb,var(--paper) 97%,#7265df))}
+.bento>.top::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 0 0,color-mix(in srgb,var(--tech-accent) 9%,transparent),transparent 48%),radial-gradient(ellipse at 100% 100%,color-mix(in srgb,#7265df 8%,transparent),transparent 44%)}
+.stmt p.big{font-size:clamp(22px,2.1vw,27px);line-height:1.35}
+.stmt p.hero-work{color:var(--ink);opacity:.8;margin-top:12px;font-size:13px;line-height:1.75}
+.hero-quote{margin:18px 0 0;padding:12px 0 0;border-top:1px solid var(--rule)}
+.hero-quote blockquote{margin:0;font:italic 14px/1.6 Georgia,serif;color:var(--ink);opacity:.85}
+.hero-quote figcaption{margin-top:6px;font:10px/1.5 var(--f-mono);color:var(--muted)}
+.hero-quote a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+.kpi:nth-child(4){border-left:1px solid var(--rule)}
+.kpi:nth-child(n+4){border-top:0}
+@media(max-width:640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(n+3){border-top:1px solid var(--rule)}.stmt p.big{font-size:23px}.hero-quote{margin-top:15px}.hero-quote blockquote{font-size:13px}}
+
